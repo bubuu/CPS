@@ -3,15 +3,24 @@ function y = reconst(x,t)
 N = length(x);
 K = length(t);
 X = fft(x);
-Nr = floor(N+1)/2;
+Nr = floor(N+1/2);
 % sprawdzenie czy jest nieparzysta
 % w przypadku parzystych nalezy powielic srodkowy prazek na polowy
 % po kazdej stronie wstawianych zer
-
-if(1 == mod(N,2))
-    Y=[X(1:Nr), zeros(1,K-N), X(Nr+1:N)];
+if(K > N)
+    if(1 == mod(N,2))
+        Y = [X(1:Nr), zeros(1,K-N), X(Nr+1:N)];
+    else
+        Y = [X(1:Nr-1), X(Nr)/2, zeros(1,K-N-1),X(Nr)/2 ,X(Nr+1:N)];
+    end
+    y = (K/N)*(ifft(Y));
 else
-    Y=[X(1:Nr-1), X(Nr)/2, zeros(1,K-N-1),X(Nr)/2 ,X(Nr+1:N)];
+    y = zeros(1,K);
+    t = linspace(1,N,K);
+    for i=1:K
+        t0=floor(t(i));
+        t1=ceil(t(i));
+        y(i)=x(t0)+(t(i)-t0)*(x(t1)-x(t0));         % Linear interp.
+    end
 end
-y=(K/N)*(ifft(Y));
 return
