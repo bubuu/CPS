@@ -30,7 +30,7 @@ X(:,3) = fft(x(:,3),N1);
 figure(1)
 subplot(2,1,1);
 stem(w(1:length(w(:,1))/2,1), abs(X(1:length(X(:,1))/2,1)./max(X(:,1))));
-xlabel('w[rad]');ylabel('X');title('Widmo amplitudowe dla Fs = 30')
+xlabel('\omega[rad]');ylabel('X');title('Widmo amplitudowe dla Fs = 30')
 
 subplot(2,1,2);
 stem(f(1:length(f(:,1))/2,1), abs(X(1:length(X(:,1))/2,1)./max(X(:,1))));
@@ -40,7 +40,7 @@ xlabel('f[Hz]');ylabel('X');title('Widmo amplitudowe dla Fs = 30')
 figure(2)
 subplot(2,1,1);
 stem(w(1:length(w(:,2))/2,2), abs(X(1:length(X(:,2))/2,2)./max(X(:,2))));
-xlabel('w[rad]');ylabel('X');title('Widmo amplitudowe dla Fs = 20')
+xlabel('\omega[rad]');ylabel('X');title('Widmo amplitudowe dla Fs = 20')
 
 subplot(2,1,2);
 stem(f(1:length(f(:,2))/2,2), abs(X(1:length(X(:,2))/2,2)./max(X(:,2))));
@@ -49,7 +49,7 @@ xlabel('f[Hz]');ylabel('X');title('Widmo amplitudowe dla Fs = 20')
 figure(3)
 subplot(2,1,1);
 stem(w(1:length(w(:,3))/2,3), abs(X(1:length(X(:,3))/2,3)./max(X(:,3))));
-xlabel('w[rad]');ylabel('X');title('Widmo amplitudowe dla Fs = 15')
+xlabel('\omega[rad]');ylabel('X');title('Widmo amplitudowe dla Fs = 15')
 
 subplot(2,1,2);
 stem(f(1:length(f(:,3))/2,3), abs(X(1:length(X(:,3))/2,3)./max(X(:,3))));
