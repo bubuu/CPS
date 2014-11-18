@@ -38,7 +38,7 @@ while(1)
     
     pause
     Mp = Mp+2;
-    Mt = Mt+1;
+    Mt = Mt+1
       
 end
 

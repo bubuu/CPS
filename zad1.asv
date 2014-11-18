@@ -22,7 +22,7 @@ ylabel('x[n]');
 title('Signal');
 
 figure
-plot(m,abs(X),'x');
+plot(m,X,'x');
 set(gcf,'color','white');
 xlabel('m');
 ylabel('|Xm|');

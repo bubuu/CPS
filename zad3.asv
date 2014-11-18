@@ -33,7 +33,7 @@ xlabel('f[MHz]');
 ylabel('\phi');
 title('Phase');
 subplot(133);
-plot(t(1:(floor(length(t)/2))), amplitude(1:(floor(length(t)/2))));
+plot(t(0:(N*Ts/2-1))), amplitude(0:(N*Ts/2-1));
 xlabel('t');
 ylabel('x[t]');
 title('DFT Magnitude');
